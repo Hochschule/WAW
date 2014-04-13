@@ -7,31 +7,31 @@
 
     <body>
         <form action="http://martinakraus.net/hsmannheim.php">
-            <p>Vorname:<input name="vorname" type="text"></p>
-            <p>Name:<input name="name" type="text"></p>
-            <p>E-Mail:<input name="email" type="text"></p>
-            <p>Matrikelnummer:<input name="matrikelnr" type="text"></p>
+            <table border="2">
+                <tr><td>Vorname:</td><td><input name="vorname" type="text"></td></tr>
+                <tr><td>Name:</td><td><input name="name" type="text"></td></tr>
+                <tr><td>E-Mail:</td><td><input name="email" type="text"></td></tr>
+                <tr><td>Matrikelnummer:</td><td><input name="matrikelnr" type="text"></td></tr>
 
-            <p>Studiengang:</p>
-            <p>
+                <tr><td>Studiengang:</td><td>
+
                 <select name="studiengang">
                     <option value="uib">UIB</option>
                     <option value="ib">IB</option>
                     <option value="ibm">IBM</option>
-                </select>
-            </p>
+                </select></td></tr>
+                <tr><td> <br>Messe: </td><td>
+                    <br><input type="radio" name="messe" value="cebit"/>CeBIT</input></br>
+                    <br><input type="radio" name="messe" value="conit"/>ConIT</input></br>
+                    <br><input type="radio" name="messe" value="webtechcon"/>WebTech Con</input></td></tr>
+                <tr><td>Handynummer: <td><input name="handy" type="text"></td></tr>
 
-           <p>
-               <input type="submit" value="Absenden"></input>
-           </p>
+                <tr><td> </td><td> <input type="submit" value="Absenden"> </td></tr>
 
-            <p>
-               <br>Radio-Button</br>
-                <br><input type="radio" name="messe" value="cebit"/>CeBIT</input></br>
-                <br><input type="radio" name="messe" value="conit"/>ConIT</input></br>
-                <br><input type="radio" name="messe" value="webtechcon"/>WebTech Con</input></br>
 
-            </p>
+
+
+            </table>
         </form>
 
 
