@@ -1,4 +1,3 @@
-body{background-color: rgb(153,217,234);}
-h1{font-size: 20px}
-.unterueberschrift{font-heigth:12px}
-
+th{font-size: 22px;text-align: center}
+#text{font-size: 16px; text-align: left}
+table{text-align: "center"; text-spacing:allow-end }
