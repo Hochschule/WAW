@@ -1,3 +1,6 @@
+body{background-color:rgb( 153,217,234)}
 th{font-size: 22px;text-align: center}
 #text{font-size: 16px; text-align: left}
 table{text-align: "center"; text-spacing:allow-end }
+td.Grp{text-align: right}
+img{ width:250px; height:250px;}
