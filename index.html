@@ -2,35 +2,34 @@
 <html>
 
     <head>
-        <style type="text/css">
-            @import "unsereCss.css";
-        </style>
+        <link type="text/css" rel="stylesheet" href="unsereCss.css">
         <title>1225624, 1232769, 1230625</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
     </head>
 
     <body>
-
-        <h1>Anmeldung</h1>
-        <span class="unterueberschrift">Hier könnt ihr euch für eine Messe eurer Wahl anmelden</span>
+    <table>
+        <tr><th><h1>Anmeldung</h1></th></tr>
+       <tr><td>Hier könnt ihr euch für eine Messe eurer Wahl anmelden</td></tr>
         <form action="http://martinakraus.net/hsmannheim.php"><br>
-
-            <table border="0">
                 <tr>
                     <td>Vorname:</td>
-                    <td><input name="vorname" type="text"></td>
+                    <td><input name="vorname" type="text" value="Bitte Vorname eingeben"></td>
                 </tr>
                 <tr>
                     <td>Name:</td>
-                    <td><input name="name" type="text"></td>
+                    <td><input name="name" type="text" value="Bitte Nachname eingeben"></td>
                 </tr>
                 <tr>
                     <td>E-Mail:</td>
-                    <td><input name="email" type="text"></td>
+                    <td><input name="email" type="text" value="Bitte E-Mail eingeben"></td>
                 </tr>
                 <tr>
                     <td>Matrikelnummer:</td>
-                    <td><input name="matrikelnr" type="text"></td>
+                    <td><input name="matrikelnr" type="text" value="Bitte MatNr eingeben"></td>
+                </tr>
+                <tr>
+                <td>Handynummer: <td><input name="handy" type="text" value="Bitte MobilNr eingeben"></td>
                 </tr>
                 <tr>
                     <td>Studiengang:</td>
@@ -48,9 +47,7 @@
                         <br><input type="radio" name="messe" value="cebit"/><a href="Cebit.html">CeBIT</a>
                         <br><input type="radio" name="messe" value="conit"/><a href="Conit.html">ConIT</a>
                         <br><input type="radio" name="messe" value="webtechcon"/><a href="Webtechcon.html">WebTech Con</a></td></tr>
-                <tr>
-                    <td>Handynummer: <td><input name="handy" type="text"></td>
-                </tr>
+
 
                 <tr>
                     <td><input type="submit" value="Absenden"> </td>
