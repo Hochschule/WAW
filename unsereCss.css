@@ -19,7 +19,7 @@ h2 {
 }
 
 #wichtiger {
-    font-height: 12px;
+    font-size: 12px;
     margin-top: 0;
     padding-bottom: 30px;
     font-weight: bold;
@@ -88,7 +88,6 @@ h2 {
 
 table {
     text-align: center;
-    text-spacing: allow-end;
     width: 50%
 }
 
