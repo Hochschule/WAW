@@ -61,11 +61,13 @@ h2 {
 }
 
 .breit {
-    width: 90%;
+    width: 50%;
     padding-left: 30px;
     padding-right: 30px;
 }
-
+.bildtop {
+    vertical-align:text-top ;
+}
 #info {
     font-weight: bold;
     font-size: 14px;
@@ -85,7 +87,9 @@ h2 {
     font-size: 16px;
     text-align: left
 }
-
+#text2 {
+    text-align: center;
+}
 table {
     text-align: center;
     width: 50%
@@ -96,6 +100,7 @@ td.Grp {
 }
 
 img {
+
     width: 250px;
     height: 250px;
 }
