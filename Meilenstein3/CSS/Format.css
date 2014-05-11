@@ -1,0 +1,121 @@
+body {
+    background-color: rgb(153, 217, 234)
+}
+
+#backToIndex{
+    position: relative;
+    top:500px;
+    left: 450px;
+}
+#detailSeite{
+    position:absolute;
+    top:500px;
+    left: 500px;
+}
+
+.alles {
+    font-weight: bold;
+    font-family: Arial Black;
+}
+
+h1 {
+    font-size: 20px;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 12px;
+    text-align: center
+}
+
+#wichtiger {
+    font-size: 12px;
+    margin-top: 0;
+    padding-bottom: 30px;
+    font-weight: bold;
+}
+
+.messenh1 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.fett {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.oben {
+    padding-left: 7%;
+}
+
+#links-abstand {
+    padding-left: 7%;
+    padding-top: 30px;
+    float: left;
+    text-align: left;
+}
+
+#rechts {
+    float: right;
+    text-align: center;
+}
+
+.rechts-oben {
+    float: right;
+    margin-right: 20px;
+    padding: 20px;
+    border: 1px solid black;
+
+}
+
+.breit {
+    width: 50%;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.bildtop {
+    vertical-align:text-top ;
+}
+#info {
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0;
+    text-align: center;
+}
+
+#center {
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+#text {
+    font-size: 16px;
+    text-align: left
+}
+#text2 {
+    text-align: center;
+}
+table {
+    text-align: center;
+    width: 50%
+}
+
+td.Grp {
+    text-align: right
+}
+
+img {
+
+    width: 250px;
+    height: 250px;
+}
+
+.backLink{
+    font-weight: bold;
+}
