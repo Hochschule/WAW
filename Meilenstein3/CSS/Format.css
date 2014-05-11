@@ -2,6 +2,14 @@ body {
     background-color: rgb(153, 217, 234)
 }
 
+
+
+#detailTabellenPosition{
+    position: relative;
+    top: 50px;
+    left: 100px;
+}
+
 #detailUeberschrift{
     position: relative;
     padding-top: 5%;
