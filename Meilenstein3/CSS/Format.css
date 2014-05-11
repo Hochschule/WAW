@@ -2,6 +2,13 @@ body {
     background-color: rgb(153, 217, 234)
 }
 
+#detailUeberschrift{
+    position: relative;
+    padding-top: 5%;
+    padding-left: 30%;
+    padding-bottom: 40px;
+}
+
 #backToIndex{
     position: relative;
     top:500px;
