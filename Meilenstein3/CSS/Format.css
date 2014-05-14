@@ -6,6 +6,11 @@ body {
     background-color: darkblue;
 }
 
+#teilnehmerTabelle{
+    position: relative;
+    top:70px;
+    left: 100px;
+}
 
 #detailTabellenPosition{
     position: relative;
@@ -20,6 +25,34 @@ body {
 .hintergrundDunkelBlau{
     background-color: darkblue;
 }
+
+#messeTabelle{
+    position: relative;
+    left: 100px;
+    top:100px;
+}
+
+.kleineNaviSelected{
+    background-color: dodgerblue;
+}
+
+.kleineNaviNotSelected{
+
+}
+
+#teilnehmerTabelleInvisible{
+    display: none;
+}
+
+.messeTabelleVisible{
+    display: block;
+}
+
+
+.messeTabelleInvisible{
+    display: none;
+}
+
 .kleineNavigationVisible{
     position:relative;
     top: 50px;

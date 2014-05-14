@@ -23,6 +23,12 @@
             }else{
                 teilnehmerTH.setAttribute("class","hintergrundDunkelBlau");
                 messeTH.setAttribute("class","");
+
+                //Messe Tabelle auf unsichtbar stellen
+                var messeTabelle = document.getElementById("messeTabelle");
+                messeTabelle.setAttribute("class","messeTabelleInvisible");
+
+                // kleine Navi einbleden
                 var kleineNaviId =document.getElementById("kleineNavigation");
                 kleineNaviId.setAttribute("class","kleineNavigationVisible");
             }
@@ -37,6 +43,66 @@
             }else{
                 messeTH.setAttribute("class","hintergrundDunkelBlau");
                 teilnehmerTH.setAttribute("class","");
+
+                //kleinen Navi ausblenden
+                var kleineNaviId =document.getElementById("kleineNavigation");
+                kleineNaviId.setAttribute("class","kleineNavigationInvisible");
+
+                // Messe Tabelle einblenden
+                var messeTabelle = document.getElementById("messeTabelle");
+                messeTabelle.setAttribute("class","messeTabelleVisible");
+            }
+        }
+
+        function onClickCebit(){
+            var naviCebit = document.getElementById("cebit");
+
+            if(naviCebit.className == "kleineNaviSelected"){
+                // mache nichts
+            }else{
+                //setzte die selected Farbe
+                naviCebit.setAttribute("class","kleineNaviSelected");
+
+                var naviConit = document.getElementById("conit");
+                var naviWebTechCon = document.getElementById("webtechcon");
+
+                // Macht die Selected farbe wieder weg
+                naviConit.setAttribute("class","kleineNaviNotSelected");
+                naviWebTechCon.setAttribute("class","kleineNaviNotSelected");
+            }
+        }
+
+        function onClickConit(){
+            var naviConit = document.getElementById("conit");
+            if(naviConit.className == "kleineNaviSelected"){
+                // mache nichts
+            }else{
+                //setzte die selected Farbe
+                naviConit.setAttribute("class","kleineNaviSelected");
+
+                var naviCebit = document.getElementById("cebit");
+                var naviWebTechCon = document.getElementById("webtechcon");
+
+                // Macht die Selected farbe wieder weg
+                naviCebit.setAttribute("class","kleineNaviNotSelected");
+                naviWebTechCon.setAttribute("class","kleineNaviNotSelected");
+            }
+        }
+
+        function onClickWebtechcon(){
+            var naviWebTechCon = document.getElementById("webtechcon");
+            if(naviWebTechCon.className == "kleineNaviSelected"){
+                // mache nichts
+            }else{
+                //setzte die selected Farbe
+                naviWebTechCon.setAttribute("class","kleineNaviSelected");
+
+                var naviCebit = document.getElementById("cebit");
+                var naviConit = document.getElementById("conit");
+
+                // Macht die Selected farbe wieder weg
+                naviCebit.setAttribute("class","kleineNaviNotSelected");
+                naviConit.setAttribute("class","kleineNaviNotSelected");
             }
         }
 
@@ -65,16 +131,7 @@
 </div>
 
 
-
-<div id="kleineNavigation" class="kleineNavigationInvisible">
-<table border="2">
-    <th>Cebit</th>
-    <th>Conhit</th>
-    <th>WebTech Con</th>
-</table>
-</div>
-
-<!--<div>
+<div id="messeTabelle" class="messeTabelleVisible">
 <table border="2">
     <tr>
         <th><span class="blaueSchrift">Messe</span></th>
@@ -93,44 +150,54 @@
         <th>300 €</th>
     </tr>
 </table>
-</div>--->
+</div>
 
-<!--<div>
-<table border="2">
-    <tr>
-       <th><span class="blaueSchrift">Name</span></th>
-       <th><span class="blaueSchrift">Vorname</span></th>
-       <th><span class="blaueSchrift">Studiengang</span></th>
-       <th><span class="blaueSchrift">eMail</span></th>
-    </tr>
-    <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-    </tr>
-    <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-    </tr>
-    <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-    </tr>
-    <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-    </tr>
 
-</table>
+<div id="kleineNavigation" class="kleineNavigationInvisible">
+    <table border="2">
+        <th id="cebit" class="kleineNaviSelected" onclick="onClickCebit()" >Cebit</th>
+        <th id="conit" class="kleineNaviNotSelected" onclick="onClickConit()">Conhit</th>
+        <th id="webtechcon" class="kleineNaviNotSelected" onclick="onClickWebtechcon()">WebTech Con</th>
+    </table>
 
-</div>-->
+
+    <!--<div id="teilnehmerTabelle">
+        <table border="2">
+            <tr>
+                <th><span class="blaueSchrift">Name</span></th>
+                <th><span class="blaueSchrift">Vorname</span></th>
+                <th><span class="blaueSchrift">Studiengang</span></th>
+                <th><span class="blaueSchrift">eMail</span></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+
+        </table>
+
+    </div> -->
+</div>
 
 </body>
 </html>
