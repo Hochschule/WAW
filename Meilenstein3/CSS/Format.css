@@ -2,12 +2,35 @@ body {
     background-color: rgb(153, 217, 234)
 }
 
+.teilnehmerMenu{
+    background-color: darkblue;
+}
 
 
 #detailTabellenPosition{
     position: relative;
     top: 50px;
     left: 100px;
+}
+
+.blaueSchrift{
+   color: blue;
+}
+
+.hintergrundDunkelBlau{
+    background-color: darkblue;
+}
+.kleineNavigationVisible{
+    position:relative;
+    top: 50px;
+    left: 100px;
+    display: block;
+}
+.kleineNavigationInvisible{
+    position:relative;
+    top: 50px;
+    left: 100px;
+    display: none;
 }
 
 #detailUeberschrift{

@@ -10,24 +10,127 @@
 
     <script type="text/javascript">
 
+
+        function onLoad(){
+            alert("FERTIISCHHHH");
+        }
+
+        function onClickTeilnehmer(){
+            var teilnehmerTH = document.getElementById("teilnehmer");
+            var messeTH =  document.getElementById("messe");
+            if(teilnehmerTH.className == "hintergrundDunkelBlau"){
+                // mache nichts
+            }else{
+                teilnehmerTH.setAttribute("class","hintergrundDunkelBlau");
+                messeTH.setAttribute("class","");
+                var kleineNaviId =document.getElementById("kleineNavigation");
+                kleineNaviId.setAttribute("class","kleineNavigationVisible");
+            }
+        }
+
+        function onClickMesse(){
+            var messeTH =  document.getElementById("messe");
+            var teilnehmerTH = document.getElementById("teilnehmer");
+
+            if(messeTH.className == "hintergrundDunkelBlau"){
+                // mache nichts
+            }else{
+                messeTH.setAttribute("class","hintergrundDunkelBlau");
+                teilnehmerTH.setAttribute("class","");
+            }
+        }
+
     </script>
+
 </head>
 
-<body>
+<body onload="onLoad()">
+
+<div id="backToIndex"><a class="backLink" href="index.html">Zurück zur Hauptseite</a></div>
 <div class="rechts-oben"><p>Platzhalter</p></div>
+
+
+
+
 
 <div id="detailUeberschrift"><h1>Details zur Anmeldung</h1></div>
 
 <div id="detailTabellenPosition">
 <table border="2">
     <tr>
-        <th>Kosten der Messe</th>
-        <th>Teilnehmer</th>
+        <th id="messe" class="hintergrundDunkelBlau" onclick="onClickMesse()">Kosten der Messe</th>
+        <th id="teilnehmer" onclick="onClickTeilnehmer()">Teilnehmer</th>
     </tr>
 </table>
-
-
 </div>
+
+
+
+<div id="kleineNavigation" class="kleineNavigationInvisible">
+<table border="2">
+    <th>Cebit</th>
+    <th>Conhit</th>
+    <th>WebTech Con</th>
+</table>
+</div>
+
+<!--<div>
+<table border="2">
+    <tr>
+        <th><span class="blaueSchrift">Messe</span></th>
+        <th><span class="blaueSchrift">Selbstkosten</span></th>
+    </tr>
+    <tr>
+        <th>CeBit</th>
+        <th>15 €</th>
+    </tr>
+    <tr>
+        <th>ConHit</th>
+        <th>50 €</th>
+    </tr>
+    <tr>
+        <th>WebTech Con</th>
+        <th>300 €</th>
+    </tr>
+</table>
+</div>--->
+
+<!--<div>
+<table border="2">
+    <tr>
+       <th><span class="blaueSchrift">Name</span></th>
+       <th><span class="blaueSchrift">Vorname</span></th>
+       <th><span class="blaueSchrift">Studiengang</span></th>
+       <th><span class="blaueSchrift">eMail</span></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+
+</table>
+
+</div>-->
 
 </body>
 </html>
