@@ -2,206 +2,13 @@
 <html>
 
 <head>
-    <link type="text/css" rel="stylesheet" href="../CSS/Format.css">
+<link type="text/css" rel="stylesheet" href="../CSS/Format.css">
 
-    <title>1225624, 1232769, 1230625</title>
+<title>1225624, 1232769, 1230625</title>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-    <script type="text/javascript">
-        var jsonForFairs;
-        var jsonForContributors;
-
-
-        function onLoad() {
-            jsonForFairs = JSON.parse(loadPage("/../WAW/Meilenstein3/Json_Objekte/messe.json"));
-            jsonForContributors = JSON.parse(loadPage("/../WAW/Meilenstein3/Json_Objekte/teilnehmer.json"));
-            function loadPage(url) {
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.open("GET", url, false);
-                xmlhttp.send();
-                return xmlhttp.response;
-            }
-        }
-
-        function erstelleTabellenRahmen(tabelle, spalten, zeilen) {
-            var dummyThead = document.createElement('thead');
-            dummyThead.id = 'theadId';
-            tabelle.appendChild(dummyThead);
-
-            //Setze PlaceHolder für Überschriftrn
-            for (var ueberschrift = 0; ueberschrift < spalten; ueberschrift++) {
-                dummyThead.appendChild(document.createElement('th'));
-            }
-
-            for (var zeilenStelle = 0; zeilenStelle < zeilen; zeilenStelle++) {
-                var dummyTr = document.createElement('tr');
-                dummyTr.id = 'tr' + zeilenStelle;
-                for (var spaltenStelle = 0; spaltenStelle < spalten; spaltenStelle++) {
-                    var dummyTd = document.createElement('td');
-                    dummyTd.id = 'td' + spaltenStelle;
-                    dummyTr.appendChild(dummyTd);
-                }
-                tabelle.appendChild(dummyTr);
-            }
-
-        }
-        function fülleDaten(newTable, data) {
-            var daten = jsonForContributors[data];
-            var tabellenHead = document.getElementById('theadId');
-            //Fülle Kopf der Tabelle.
-            for (var headerZeile = 0; headerZeile < tabellenHead.children.length; headerZeile++) {
-                //alert(daten.header[headerZeile]); //DEBUG-OUTPUT
-                tabellenHead.children[headerZeile].innerHTML = daten.header[headerZeile];
-            }
-            //Fülle Daten der Tabelle
-            var temp = 0;
-            for (var datenZeile = 0; datenZeile < daten.data.name.length; datenZeile++) {
-                var dummyTr = document.getElementById('tr' + datenZeile);
-                for (var datenSpalte = 0; datenSpalte < dummyTr.children.length; datenSpalte++) {
-                    dummyTr.children[datenSpalte].innerHTML = daten.data[Object.keys(daten.data)[datenSpalte]][temp];
-
-                }
-                temp++;
-                if (temp == dummyTr.children.length) {
-                    temp = 0;
-                }
-            }
-
-        }
-
-
-        function tabellenOperation(hauptDiv, clickedElement) {
-
-            var newTable = löscheUndErzeugeTabelle();
-            var defaultString = 'cebit';
-            if (clickedElement) {
-                defaultString = clickedElement;
-                alert(clickedElement);
-            }
-
-            alert(defaultString);
-            erstelleTabellenRahmen(newTable, Object.keys(jsonForContributors[defaultString].data).length,
-                    jsonForContributors[defaultString].data.name.length);
-            hauptDiv.appendChild(newTable);
-            fülleDaten(newTable, defaultString);
-
-            function löscheUndErzeugeTabelle() {
-                if (document.getElementById('nt')) {
-                    document.getElementById('nt').remove();
-                }
-                var newTable = document.createElement('table');
-                newTable.className = 'tabelleData';
-                newTable.id = 'nt';
-                return newTable;
-            }
-        }
-        function onClickTeilnehmer() {
-            var teilnehmerTH = document.getElementById("teilnehmer");
-            var messeTH = document.getElementById("messe");
-            if (teilnehmerTH.className == "hintergrundDunkelBlau") {
-                // mache nichts
-            } else {
-                teilnehmerTH.setAttribute("class", "hintergrundDunkelBlau");
-                messeTH.setAttribute("class", "");
-
-                //Messe Tabelle auf unsichtbar stellen
-                var messeTabelle = document.getElementById("messeTabelle");
-                messeTabelle.setAttribute("class", "messeTabelleInvisible");
-
-                // kleine Navi einbleden
-                var kleineNaviId = document.getElementById("kleineNavigation");
-                kleineNaviId.setAttribute("class", "kleineNavigationVisible");
-
-                var hauptDiv = document.getElementById('kleineNavigation');
-                tabellenOperation(hauptDiv, null);
-            }
-        }
-
-
-        function onClickMesse() {
-            var messeTH = document.getElementById("messe");
-            var teilnehmerTH = document.getElementById("teilnehmer");
-
-            if (messeTH.className == "hintergrundDunkelBlau") {
-                // mache nichts
-            } else {
-                messeTH.setAttribute("class", "hintergrundDunkelBlau");
-                teilnehmerTH.setAttribute("class", "");
-
-                //kleinen Navi ausblenden
-                var kleineNaviId = document.getElementById("kleineNavigation");
-                kleineNaviId.setAttribute("class", "kleineNavigationInvisible");
-
-                // Messe Tabelle einblenden
-                var messeTabelle = document.getElementById("messeTabelle");
-                messeTabelle.setAttribute("class", "messeTabelleVisible");
-            }
-        }
-
-        function onClickCebit() {
-            var naviCebit = document.getElementById("cebit");
-
-            if (naviCebit.className != "kleineNaviSelected") {
-                //setzte die selected Farbe
-                naviCebit.setAttribute("class", "kleineNaviSelected");
-
-                var naviConit = document.getElementById("conhit");
-                var naviWebTechCon = document.getElementById("webtechcon");
-
-                // Macht die Selected farbe wieder weg
-                naviConit.setAttribute("class", "kleineNaviNotSelected");
-                naviWebTechCon.setAttribute("class", "kleineNaviNotSelected");
-
-                var hauptDiv = document.getElementById('kleineNavigation');
-
-                var newTable = document.createElement('table');
-
-                newTable.id = 'nt';
-                hauptDiv.appendChild(newTable);
-            }
-
-
-        }
-
-        function onClickConit(element) {
-
-            var naviConit = document.getElementById("conhit");
-            if (naviConit.className == "kleineNaviSelected") {
-                // mache nichts
-            } else {
-                //setzte die selected Farbe
-                naviConit.setAttribute("class", "kleineNaviSelected");
-
-                var naviCebit = document.getElementById("cebit");
-                var naviWebTechCon = document.getElementById("webtechcon");
-
-                // Macht die Selected farbe wieder weg
-                naviCebit.setAttribute("class", "kleineNaviNotSelected");
-                naviWebTechCon.setAttribute("class", "kleineNaviNotSelected");
-            }
-            tabellenOperation(document.getElementById('kleineNavigation'), 'conhit');
-        }
-
-        function onClickWebtechcon(element) {
-            var naviWebTechCon = document.getElementById("webtechcon");
-            if (naviWebTechCon.className == "kleineNaviSelected") {
-                // mache nichts
-            } else {
-                //setzte die selected Farbe
-                naviWebTechCon.setAttribute("class", "kleineNaviSelected");
-
-                var naviCebit = document.getElementById("cebit");
-                var naviConit = document.getElementById("conhit");
-
-                // Macht die Selected farbe wieder weg
-                naviCebit.setAttribute("class", "kleineNaviNotSelected");
-                naviConit.setAttribute("class", "kleineNaviNotSelected");
-            }
-            tabellenOperation(document.getElementById('kleineNavigation'), 'webtechcon');
-        }
-
-    </script>
+<script type="text/javascript" src="../JavaScript/detailJavaScript.js"></script>
 
 </head>
 
@@ -222,34 +29,22 @@
     </table>
 </div>
 
-<!--
+
 <div id="messeTabelle" class="messeTabelleVisible">
-    <table border="2">
-        <tr>
-            <th><span class="blaueSchrift">Messe</span></th>
-            <th><span class="blaueSchrift">Selbstkosten</span></th>
-        </tr>
-        <tr>
-            <th>CeBit</th>
-            <th>15 €</th>
-        </tr>
-        <tr>
-            <th>ConHit</th>
-            <th>50 €</th>
-        </tr>
-        <tr>
-            <th>WebTech Con</th>
-            <th>300 €</th>
-        </tr>
-    </table>
+
+
 </div>
--->
+
 
 <div id="kleineNavigation" class="kleineNavigationInvisible">
     <table border="2">
         <th id="cebit" class="kleineNaviSelected" onclick="onClickCebit(document.getElementById('cebit').id)">Cebit</th>
-        <th id="conhit" class="kleineNaviNotSelected" onclick="onClickConit(document.getElementById('conhit').id)">Conhit</th>
-        <th id="webtechcon" class="kleineNaviNotSelected" onclick="onClickWebtechcon(document.getElementById('webtechcon').id)">WebTech Con</th>
+        <th id="conhit" class="kleineNaviNotSelected" onclick="onClickConit(document.getElementById('conhit').id)">
+            Conhit
+        </th>
+        <th id="webtechcon" class="kleineNaviNotSelected"
+            onclick="onClickWebtechcon(document.getElementById('webtechcon').id)">WebTech Con
+        </th>
     </table>
 
 
