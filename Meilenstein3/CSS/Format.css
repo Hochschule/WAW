@@ -203,6 +203,14 @@ td.Grp {
     text-align: right
 }
 
+table.tabelleData {
+    border: 1px solid black;
+}
+
+#tabelleData > td,tr {
+    border: 1px solid black;
+}
+
 img {
 
     width: 250px;
