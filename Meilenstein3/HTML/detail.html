@@ -52,53 +52,82 @@
                 var messeTabelle = document.getElementById("messeTabelle");
                 messeTabelle.setAttribute("class","messeTabelleVisible");
             }
-        }
 
+        }
         function onClickCebit(){
-            var naviCebit = document.getElementById("cebit");
+            var naviCebit =  document.getElementById("cebit");
+            var naviConit = document.getElementById("conit");
+            var naviWebTechCon = document.getElementById("webtechcon");
 
             if(naviCebit.className == "kleineNaviSelected"){
                 // mache nichts
             }else{
-                //setzte die selected Farbe
+
+
                 naviCebit.setAttribute("class","kleineNaviSelected");
+                naviConit.setAttribute("class","");
+                naviWebTechCon.setAttribute("class","");
 
-                var naviConit = document.getElementById("conit");
-                var naviWebTechCon = document.getElementById("webtechcon");
+                // Messe Tabelle einblenden
+                var cebitTabelle = document.getElementById("cebitTabelle");
+                cebitTabelle.setAttribute("class","messeTabelleVisible");
+                var conitTabelle = document.getElementById("conitTabelle");
+                conitTabelle.setAttribute("class","messeTabelleInvisible");
+                var webTechTabelle = document.getElementById("webTechTabelle");
+                webTechTabelle.setAttribute("class","messeTabelleInvisible");
 
-                // Macht die Selected farbe wieder weg
                 naviConit.setAttribute("class","kleineNaviNotSelected");
                 naviWebTechCon.setAttribute("class","kleineNaviNotSelected");
+
             }
         }
 
         function onClickConit(){
+            var naviCebit =  document.getElementById("cebit");
             var naviConit = document.getElementById("conit");
+            var naviWebTechCon = document.getElementById("webtechcon");
+
             if(naviConit.className == "kleineNaviSelected"){
                 // mache nichts
             }else{
-                //setzte die selected Farbe
-                naviConit.setAttribute("class","kleineNaviSelected");
 
-                var naviCebit = document.getElementById("cebit");
-                var naviWebTechCon = document.getElementById("webtechcon");
+                naviConit.setAttribute("class","kleineNaviSelected");
+                naviCebit.setAttribute("class","");
+                naviWebTechCon.setAttribute("class","");
+
+                var conitTabelle = document.getElementById("conitTabelle");
+                conitTabelle.setAttribute("class","messeTabelleVisible");
+                var cebitTabelle = document.getElementById("cebitTabelle");
+                cebitTabelle.setAttribute("class","messeTabelleInvisible");
+                var webTechTabelle = document.getElementById("webTechTabelle");
+                webTechTabelle.setAttribute("class","messeTabelleInvisible");
 
                 // Macht die Selected farbe wieder weg
                 naviCebit.setAttribute("class","kleineNaviNotSelected");
                 naviWebTechCon.setAttribute("class","kleineNaviNotSelected");
+
             }
         }
 
         function onClickWebtechcon(){
+            var naviCebit =  document.getElementById("cebit");
+            var naviConit = document.getElementById("conit");
             var naviWebTechCon = document.getElementById("webtechcon");
+
             if(naviWebTechCon.className == "kleineNaviSelected"){
                 // mache nichts
             }else{
-                //setzte die selected Farbe
-                naviWebTechCon.setAttribute("class","kleineNaviSelected");
 
-                var naviCebit = document.getElementById("cebit");
-                var naviConit = document.getElementById("conit");
+                naviWebTechCon.setAttribute("class","kleineNaviSelected");
+                naviCebit.setAttribute("class","");
+                naviConit.setAttribute("class","");
+
+                var webTechTabelle = document.getElementById("webTechTabelle");
+                webTechTabelle.setAttribute("class","messeTabelleVisible");
+                var cebitTabelle = document.getElementById("cebitTabelle");
+                cebitTabelle.setAttribute("class","messeTabelleInvisible");
+                var conitTabelle = document.getElementById("conitTabelle");
+                conitTabelle.setAttribute("class","messeTabelleInvisible");
 
                 // Macht die Selected farbe wieder weg
                 naviCebit.setAttribute("class","kleineNaviNotSelected");
@@ -122,7 +151,7 @@
 <div id="detailUeberschrift"><h1>Details zur Anmeldung</h1></div>
 
 <div id="detailTabellenPosition">
-<table border="2">
+<table border="1">
     <tr>
         <th id="messe" class="hintergrundDunkelBlau" onclick="onClickMesse()">Kosten der Messe</th>
         <th id="teilnehmer" onclick="onClickTeilnehmer()">Teilnehmer</th>
@@ -138,16 +167,17 @@
         <th><span class="blaueSchrift">Selbstkosten</span></th>
     </tr>
     <tr>
-        <th>CeBit</th>
-        <th>15 €</th>
+        <th class="MesseFormat">CeBit</th>
+        <th class="MesseFormat">15 €</th>
+
     </tr>
     <tr>
-        <th>ConHit</th>
-        <th>50 €</th>
+        <th class="MesseFormat">ConHit</th>
+        <th class="MesseFormat">50 €</th>
     </tr>
     <tr>
-        <th>WebTech Con</th>
-        <th>300 €</th>
+        <th class="MesseFormat">WebTech Con</th>
+        <th class="MesseFormat">300 €</th>
     </tr>
 </table>
 </div>
@@ -160,7 +190,92 @@
         <th id="webtechcon" class="kleineNaviNotSelected" onclick="onClickWebtechcon()">WebTech Con</th>
     </table>
 
+    <div id="cebitTabelle" class="messeTabelleVisible">
+        <table border="1">
+            <tr>
+                <th><span class="blaueSchrift">Name</span></th>
+                <th><span class="blaueSchrift">Vorname</span></th>
+                <th><span class="blaueSchrift">Studiengang</span></th>
+                <th><span class="blaueSchrift">eMail</span></th>
+            </tr>
+            <tr>
+                <th class="MesseFormat"></th>
+                <th class="MesseFormat">15 €</th>
+                <th class="MesseFormat">CeBit</th>
+                <th class="MesseFormat">15 €</th>
+            </tr>
+            <tr>
+                <th class="MesseFormat">ConHit</th>
+                <th class="MesseFormat">50 €</th>
+                <th class="MesseFormat">CeBit</th>
+                <th class="MesseFormat">15 €</th>
+            </tr>
+            <tr>
+                <th class="MesseFormat">WeasdasdasdabTech Con</th>
+                <th class="MesseFormat">30sdasdasadasd0 €</th>
+                <th class="MesseFormat">CeBdasdasdasdit</th>
+                <th class="MesseFormat">15 asdasdasdas€</th>
+            </tr>
+        </table>
+    </div>
 
+   <div id="conitTabelle" class="messeTabelleInvisible">
+        <table border="1">
+            <tr>
+                <th><span class="blaueSchrift">Name</span></th>
+                <th><span class="blaueSchrift">Vorname</span></th>
+                <th><span class="blaueSchrift">Studiengang</span></th>
+                <th><span class="blaueSchrift">eMail</span></th>
+            </tr>
+            <tr>
+                <th class="cebitNamen"></th>
+                <th class="MesseFormat">15 €</th>
+                <th class="MesseFormat">CeBit</th>
+                <th class="MesseFormat">15 €</th>
+            </tr>
+            <tr>
+                <th class="MesseFormat">ConasdasdasdasdaHit</th>
+                <th class="MesseFormat">5asdasdasd0 €</th>
+                <th class="MesseFormat">CeasdasdasdasdBit</th>
+                <th class="MesseFormat">15asdasdadasda €</th>
+            </tr>
+            <tr>
+                <th class="MesseFormat">WebTech Con</th>
+                <th class="MesseFormat">300 €</th>
+                <th class="MesseFormat">CeBit</th>
+                <th class="MesseFormat">15 €</th>
+            </tr>
+        </table>
+    </div>
+
+    <div id="webTechTabelle" class="messeTabelleInvisible">
+        <table border="1">
+            <tr>
+                <th><span class="blaueSchrift">Name</span></th>
+                <th><span class="blaueSchrift">Vorname</span></th>
+                <th><span class="blaueSchrift">Studiengang</span></th>
+                <th><span class="blaueSchrift">eMail</span></th>
+            </tr>
+            <tr>
+                <th class="cebitNamen">sadasdasdas</th>
+                <th class="MesseFormat">sadasdasd €</th>
+                <th class="MesseFormat">CasdasdasdeBit</th>
+                <th class="MesseFormat">15asdasdasdasd €</th>
+            </tr>
+            <tr>
+                <th class="MesseFormat">ConwertewrtwertwertHit</th>
+                <th class="MesseFormat">50ewrtewrtewrtwer €</th>
+                <th class="MesseFormat">CeBtewrtewtewtweit</th>
+                <th class="MesseFormat">15rtewrtewrtwert €</th>
+            </tr>
+            <tr>
+                <th class="MesseFormat">wertwertewrtewrtew Con</th>
+                <th class="MesseFormat">30rtewrtewrtwertw0 €</th>
+                <th class="MesseFormat">CeertewtewrtwerBit</th>
+                <th class="MesseFormat">15tewrtewrtewrtwer €</th>
+            </tr>
+        </table>
+    </div>
     <!--<div id="teilnehmerTabelle">
         <table border="2">
             <tr>
