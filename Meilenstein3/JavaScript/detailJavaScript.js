@@ -12,6 +12,7 @@ function erstelleMesseTabelle() {
     dummyTable.id = "messeTableId";
     var dummyThead = document.createElement('thead');
     dummyThead.id = 'theadId';
+    dummyThead.className = 'tabellenTd';
     dummyTable.appendChild(dummyThead);
 
     for (var ueberschrift = 0; ueberschrift < messeSpalten; ueberschrift++) {
@@ -24,6 +25,7 @@ function erstelleMesseTabelle() {
         for (var spaltenStelle = 0; spaltenStelle < messeSpalten; spaltenStelle++) {
             var dummyTd = document.createElement('td');
             dummyTd.id = 'td' + spaltenStelle;
+            dummyTd.className = 'tabellenTd';
             dummyTr.appendChild(dummyTd);
         }
         dummyTable.appendChild(dummyTr);
@@ -74,6 +76,7 @@ function erstelleTabellenRahmen(tabelle, spalten, zeilen) {
     }
     var dummyThead = document.createElement('thead');
     dummyThead.id = 'theadId';
+    dummyThead.className = 'tabellenTd';
     tabelle.appendChild(dummyThead);
 
     //Setze PlaceHolder für Überschriftrn
@@ -87,6 +90,7 @@ function erstelleTabellenRahmen(tabelle, spalten, zeilen) {
         for (var spaltenStelle = 0; spaltenStelle < spalten; spaltenStelle++) {
             var dummyTd = document.createElement('td');
             dummyTd.id = 'td' + spaltenStelle;
+            dummyTd.className = 'tabellenTd';
             dummyTr.appendChild(dummyTd);
         }
         tabelle.appendChild(dummyTr);
@@ -125,10 +129,7 @@ function tabellenOperation(hauptDiv, clickedElement) {
     var defaultString = 'cebit';
     if (clickedElement) {
         defaultString = clickedElement;
-
     }
-
-
     erstelleTabellenRahmen(newTable, Object.keys(jsonForContributors[defaultString].data).length,
         jsonForContributors[defaultString].data.name.length);
     hauptDiv.appendChild(newTable);
@@ -142,7 +143,8 @@ function tabellenOperation(hauptDiv, clickedElement) {
             document.getElementById('nt').remove();
         }
         var newTable = document.createElement('table');
-        newTable.className = 'tabelleData';
+        newTable.className = 'messeTableId';
+
         newTable.id = 'nt';
         return newTable;
     }

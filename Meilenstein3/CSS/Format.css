@@ -61,6 +61,11 @@ body {
 
 }
 
+#theadId{
+    color:royalblue;
+
+}
+
 #teilnehmerTabelleInvisible{
     display: none;
 }
@@ -69,6 +74,14 @@ body {
     display: block;
 }
 
+#messeTableId, .messeTableId {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th,td.tabellenTd {
+   border-right: 1px solid black;
+}
 
 .messeTabelleInvisible{
     display: none;
@@ -209,6 +222,10 @@ table.tabelleData {
 
 #tabelleData > td,tr {
     border: 1px solid black;
+}
+
+tr.header {
+border-right: 1px solid black;
 }
 
 img {
