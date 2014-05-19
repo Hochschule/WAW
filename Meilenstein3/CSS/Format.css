@@ -227,9 +227,6 @@ table.tabelleData {
 
 
 }
-table.kleineNaviForm {
-    margin-left:80px;
-}
 #tabelleData > td,tr {
     border: 1px solid black;
 
