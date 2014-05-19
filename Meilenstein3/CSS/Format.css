@@ -94,12 +94,15 @@ td.tabellenTd {
     left: 100px;
     display: block;
     width:900px;
+    margin-bottom: 50px;
+
 }
 .kleineNavigationInvisible{
     position:relative;
     top: 50px;
     left: 100px;
     display: none;
+
 }
 
 #detailUeberschrift{
@@ -221,6 +224,7 @@ table.tabelleData {
     border: 1px solid black;
     margin-left:80px;
     width:495px;
+
 
 }
 table.kleineNaviForm {
