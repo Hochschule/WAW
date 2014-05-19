@@ -20,7 +20,7 @@
             "name": ["Schmuecker", "Felsenheimer"],
             "vorname": ["Paul", "Jan"],
             "studiengang": ["IMB", "IB"],
-            "email": ["p.schmuecker@hs-mannheim.de", "j.felsenheimer@diebestebaendderwelt.de"]
+            "email": ["p.schmuecker@hs-mannheim.de", "j.felsenheimer@\ndiebestebaendderwelt.de"]
         }
 
     },

@@ -45,7 +45,7 @@ function erstelleMesseTabelle() {
 
             }
             temp++;
-            if (temp == dummyTr.children.length) {
+            if (temp == dummyTr.children.length+1) {
                 temp = 0;
             }
         }
