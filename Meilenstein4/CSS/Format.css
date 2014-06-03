@@ -248,5 +248,7 @@ img {
 
 .fehlerEingabe{
     border:3px solid red;
-
+}
+.richtigeEingabe{
+    border-style: hidden;
 }
