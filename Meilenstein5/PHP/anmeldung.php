@@ -33,6 +33,6 @@ fwrite($handle,", ");
 fwrite($handle,$name["handy"]);
 fwrite($handle,", ");
 fwrite($handle,$name["studiengang"]);
-fclose($handle);
+
 
 ?>
