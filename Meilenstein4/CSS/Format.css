@@ -174,7 +174,7 @@ h2 {
 }
 
 .rechts-oben {
-    float:left;
+    float:right;
     margin-left: 700px;
     border: 1px solid black;
     width:100px;
@@ -244,4 +244,11 @@ img {
 
 .backLink{
     font-weight: bold;
+}
+
+.fehlerEingabe{
+    border:3px solid red;
+}
+.richtigeEingabe{
+    border-style: hidden;
 }

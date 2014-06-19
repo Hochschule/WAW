@@ -1,0 +1,40 @@
+{
+    "cebit": {
+
+        "header": ["Name", "Vorname", "Studiengang", "eMail"],
+
+        "data": {
+            "name": ["Ent", "Kraus", "Smits", "Gröschel"],
+            "vorname": ["Thilo", "Martina", "Thomas", "Michael"],
+            "studiengang": ["IB", "IB", "UIB", "IMB"],
+            "email": ["t.ent@gmail.de", "m.kraus@hs-mannheim.de", "t.smits@hs-mannheim.de", "m.gröschel@hs-mannheim.de"]
+        }
+    },
+
+
+    "conhit": {
+
+        "header": ["Name", "Vorname", "Studiengang", "eMail"],
+
+        "data": {
+            "name": ["Schmuecker", "Felsenheimer"],
+            "vorname": ["Paul", "Jan"],
+            "studiengang": ["IMB", "IB"],
+            "email": ["p.schmuecker@hs-mannheim.de", "j.felsenheimer@\ndiebestebaendderwelt.de"]
+        }
+
+    },
+
+    "webtechcon": {
+
+        "header": ["Name", "Vorname", "Studiengang", "eMail"],
+
+        "data": {
+            "name": ["Spies", "Hoppe", "Hofmeister"],
+            "vorname": ["Marcell", "Johannes", "Johannes"],
+            "studiengang": ["IB", "UIB", "UIB"],
+            "email": ["m.spies@gmail.de", "j.hoppe@gmx.de", "cessor@gmail.de"]
+        }
+
+    }
+}
