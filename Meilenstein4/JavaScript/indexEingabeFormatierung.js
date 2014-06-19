@@ -71,7 +71,7 @@ function eingabeUeberpruefung() {
 
     }
 
-    if (handy.match("01[1-9][0-9]([0-9]{7,8})")) {
+    if (handy.match("01[1-9][0-9]([0-9]{7,8})+$")) {
         eingabeHandy = true;
         var _handy = document.getElementById("handyID");
         _handy.className = "richtigeEingabe";
