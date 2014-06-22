@@ -57,9 +57,10 @@ function erstelleMesseTabelle() {
 }
 
 
-function onLoad() {
+function onLoad(jsnObj) {
     jsonForFairs = JSON.parse(loadPage("/../WAW/Meilenstein3/Json_Objekte/messe.json"));
-    jsonForContributors = JSON.parse(loadPage("/../WAW/Meilenstein3/Json_Objekte/teilnehmer.json"));
+    jsonForContributors = JSON.parse(jsnObj);
+
     function loadPage(url) {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.open("GET", url, false);
